@@ -508,6 +508,7 @@ app.post("/webhook/whatsapp", verifyTwilioSignature, async (req, res) => {
     if (/key\s*box|nøkkel|inngang|entry|check.?in|how to (get|enter)|hvordan komme/i.test(body + " " + reply)) {
       msg.media(`${BASE_URL}/static/keybox-map.jpg`);
       msg.media(`${BASE_URL}/static/keybox-photo.jpg`);
+      msg.media(`${BASE_URL}/static/keybox-code.jpg`);
     }
     
     res.type("text/xml").send(twiml.toString());
