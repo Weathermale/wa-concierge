@@ -535,18 +535,38 @@ app.listen(PORT, () => {
   if (DEFAULT_PROFILE_ID === "nyholmen" && !profiles.has("nyholmen")) {
     profiles.set("nyholmen", {
       id: "nyholmen",
-      name: "Nyholmen Apartments",
+      name: "Nyholmen Apartment 502",
       locale: "no",
-      content: `Nyholmen Apartments – Tromsø, Norway
+      content: `Nyholmen Apartment 502 – Strandkanten, Tromsø, Norway
 
 PROPERTY:
 - Located at Strandkanten in Tromsø, close to the waterfront and city center
+- 5th floor corner apartment (H0502) with Arctic views
 - Airbnb listing: https://www.airbnb.no/rooms/17491112
-- Modern, fully furnished apartments with stunning Arctic views
 
-CHECK-IN:
-- Self check-in with lockbox/code (provided 24h before arrival)
+CHECK-IN / CHECK-OUT:
 - Check-in: 16:00 / Check-out: 12:00
+- Self check-in with key box on the north side of the building (facing city center / Tromsø bridge / Arctic Cathedral)
+- Key box code: 1945
+- Open the key box, take the key, lock the box again
+- One key provided – opens main entrance, back entrance, and apartment door
+- Easiest entry: back entrance (second door on the key box side), go straight through white door, take elevator to 5th floor, turn left to apartment H0502
+
+WIFI:
+- Network: Another Day Another Slay
+- Password: Finansavis7Plankehytte2
+
+HOUSE RULES:
+- No smoking indoors or on balcony (5000 NOK fine)
+- Remove shoes inside the apartment
+- Remove spikes from shoes when entering the building
+- No excessive noise (music, shouting) between 22:00–07:00
+- Sort trash and use garbage chutes outside the building
+- Lock doors and windows when leaving; ensure main building doors close properly
+- Leave apartment in decent condition; take out trash, put dishes in dishwasher (500 NOK fine for excessive cleaning needed)
+- Use the fan while cooking
+- Read fire alarm instructions (8000 NOK fine if false alarm triggered and procedures not followed)
+- Broken or stolen items will be fined at replacement cost
 
 AMENITIES:
 - Free WiFi
@@ -555,16 +575,18 @@ AMENITIES:
 - Smart TV with streaming
 - Heating throughout
 - Towels and bed linen provided
-
-HOUSE RULES:
-- No smoking indoors
-- No parties or loud noise after 22:00
-- Pets allowed on request
-- Please sort waste (recycling bins provided)
+- Elevator in building
 
 PARKING:
 - Free street parking nearby
 - Paid parking garage within 5 min walk
+
+WINTER TIPS FOR TROMSØ:
+- Northern Lights: Visible from mountains, fjords, or even the city on clear nights (Oct–Mar). Guided tours recommended.
+- Dog Sledding: Arctic wilderness adventure, a visitor favorite
+- Hiking: Explore Fløya mountain or take Fjellheisen cable car for spectacular views
+- Polaria & Arctic Cathedral: Local landmarks for Tromsø history and Arctic nature
+- Arctic Bathing: Icy sea dip followed by sauna – true Norwegian tradition!
 
 NEARBY ATTRACTIONS:
 - Polaria Arctic Experience Center (5 min walk)
@@ -572,7 +594,6 @@ NEARBY ATTRACTIONS:
 - Fjellheisen Cable Car (15 min drive) – panoramic views
 - Tromsø Bridge & harbour area
 - Mack Brewery (oldest brewery in Norway, 10 min walk)
-- Northern Lights visible from October to March
 - Midnight Sun from May to July
 
 LOCAL TIPS:
@@ -583,7 +604,9 @@ LOCAL TIPS:
 - Airport: Tromsø Langnes (TOS), 15 min drive
 
 CONTACT:
-- For urgent issues, contact the host directly via Airbnb messaging
+- Jacob: +47 95 82 76 49
+- Vilde: +47 91 68 80 65
+- Or contact via booking system
 - For general questions, this AI concierge is available 24/7`
     });
     console.log("Auto-seeded Nyholmen Apartments profile");
