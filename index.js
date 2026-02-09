@@ -530,4 +530,62 @@ app.listen(PORT, () => {
   if (!TWILIO_AUTH_TOKEN) console.warn("WARNING: TWILIO_AUTH_TOKEN is not set");
   if (!DEFAULT_PROFILE_ID)
     console.warn("WARNING: DEFAULT_PROFILE_ID is not set");
+
+  // Auto-seed default profile on startup
+  if (DEFAULT_PROFILE_ID === "nyholmen" && !profiles.has("nyholmen")) {
+    profiles.set("nyholmen", {
+      id: "nyholmen",
+      name: "Nyholmen Apartments",
+      locale: "no",
+      content: `Nyholmen Apartments – Tromsø, Norway
+
+PROPERTY:
+- Located in the heart of Tromsø, walking distance to the city center
+- Airbnb listing: https://www.airbnb.no/rooms/17491112
+- Modern, fully furnished apartments with stunning Arctic views
+
+CHECK-IN:
+- Self check-in with lockbox/code (provided 24h before arrival)
+- Check-in: 15:00 / Check-out: 11:00
+
+AMENITIES:
+- Free WiFi
+- Fully equipped kitchen
+- Washing machine & dryer
+- Smart TV with streaming
+- Heating throughout
+- Towels and bed linen provided
+
+HOUSE RULES:
+- No smoking indoors
+- No parties or loud noise after 22:00
+- Pets allowed on request
+- Please sort waste (recycling bins provided)
+
+PARKING:
+- Free street parking nearby
+- Paid parking garage within 5 min walk
+
+NEARBY ATTRACTIONS:
+- Polaria Arctic Experience Center (5 min walk)
+- Arctic Cathedral (10 min drive)
+- Fjellheisen Cable Car (15 min drive) – panoramic views
+- Tromsø Bridge & harbour area
+- Mack Brewery (oldest brewery in Norway, 10 min walk)
+- Northern Lights visible from October to March
+- Midnight Sun from May to July
+
+LOCAL TIPS:
+- Best Northern Lights spot: Telegrafbukta beach (15 min walk)
+- Best restaurants: Mathallen Tromsø, Fiskekompaniet, Hildr Gastro Bar
+- Grocery stores: Rema 1000 and Coop nearby (5 min walk)
+- Public transport: Bus routes from city center, Tromsø card available
+- Airport: Tromsø Langnes (TOS), 15 min drive
+
+CONTACT:
+- For urgent issues, contact the host directly via Airbnb messaging
+- For general questions, this AI concierge is available 24/7`
+    });
+    console.log("Auto-seeded Nyholmen Apartments profile");
+  }
 });
