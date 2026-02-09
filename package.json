@@ -1,0 +1,19 @@
+{
+  "name": "wa-concierge",
+  "version": "1.0.0",
+  "description": "WhatsApp AI concierge bot for vacation rentals",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.0",
+    "node-fetch": "^2.7.0",
+    "twilio": "^5.4.0"
+  }
+}
