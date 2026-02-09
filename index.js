@@ -507,6 +507,7 @@ app.post("/webhook/whatsapp", verifyTwilioSignature, async (req, res) => {
     // If reply mentions key box, entry, or check-in instructions, attach the map
     if (/key\s*box|nøkkel|inngang|entry|check.?in|how to (get|enter)|hvordan komme/i.test(body + " " + reply)) {
       msg.media(`${BASE_URL}/static/keybox-map.jpg`);
+      msg.media(`${BASE_URL}/static/keybox-photo.jpg`);
     }
     
     res.type("text/xml").send(twiml.toString());
