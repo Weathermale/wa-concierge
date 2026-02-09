@@ -540,13 +540,13 @@ app.listen(PORT, () => {
       content: `Nyholmen Apartments – Tromsø, Norway
 
 PROPERTY:
-- Located in the heart of Tromsø, walking distance to the city center
+- Located at Strandkanten in Tromsø, close to the waterfront and city center
 - Airbnb listing: https://www.airbnb.no/rooms/17491112
 - Modern, fully furnished apartments with stunning Arctic views
 
 CHECK-IN:
 - Self check-in with lockbox/code (provided 24h before arrival)
-- Check-in: 15:00 / Check-out: 11:00
+- Check-in: 16:00 / Check-out: 12:00
 
 AMENITIES:
 - Free WiFi
