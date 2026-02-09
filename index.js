@@ -217,6 +217,10 @@ app.use((req, res, next) => {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// Serve static files (images for WhatsApp media messages)
+const path = require("path");
+app.use("/static", express.static(path.join(__dirname, "public")));
+
 function verifyTwilioSignature(req, res, next) {
   if (process.env.SKIP_TWILIO_VALIDATION === "true") return next();
   if (process.env.NODE_ENV === "development") return next();
@@ -496,7 +500,15 @@ app.post("/webhook/whatsapp", verifyTwilioSignature, async (req, res) => {
       profileName: profile.name,
     });
 
-    twiml.message(reply);
+    // Attach relevant images based on reply content
+    const BASE_URL = process.env.RENDER_EXTERNAL_URL || `https://wa-concierge.onrender.com`;
+    const msg = twiml.message(reply);
+    
+    // If reply mentions key box, entry, or check-in instructions, attach the map
+    if (/key\s*box|nøkkel|inngang|entry|check.?in|how to (get|enter)|hvordan komme/i.test(body + " " + reply)) {
+      msg.media(`${BASE_URL}/static/keybox-map.jpg`);
+    }
+    
     res.type("text/xml").send(twiml.toString());
   } catch (error) {
     console.error("Webhook error:", error.message);
