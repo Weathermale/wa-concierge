@@ -218,6 +218,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 function verifyTwilioSignature(req, res, next) {
+  if (process.env.SKIP_TWILIO_VALIDATION === "true") return next();
   if (process.env.NODE_ENV === "development") return next();
 
   const signature = req.headers["x-twilio-signature"];
